@@ -1,104 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Abhiram | Portfolio</title>
+<meta charset="UTF-8">
+<title>Abhiram | Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef6ff;
+    color: #1e293b;
+}
 
-        body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
-        header {
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header h2 {
+    color: #3b82f6;
+}
 
-        header h2 {
-            font-weight: bold;
-        }
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+}
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: white;
-            font-size: 14px;
-        }
+nav a:hover {
+    color: #3b82f6;
+}
 
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-        }
+/* HERO */
+.hero {
+    padding: 80px 60px;
+}
 
-        .hero h1 {
-            font-size: 48px;
-        }
+.hero h1 {
+    font-size: 42px;
+}
 
-        .hero p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
+.hero span {
+    color: #3b82f6;
+}
 
-        .btn {
-            margin-top: 25px;
-            padding: 12px 25px;
-            border-radius: 25px;
-            border: none;
-            cursor: pointer;
-            background: white;
-            color: #333;
-            font-weight: bold;
-        }
+.hero h3 {
+    margin-top: 10px;
+    color: #2563eb;
+}
 
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            background: rgba(0,0,0,0.1);
-            margin-top: 30px;
-        }
+.hero p {
+    margin-top: 15px;
+    max-width: 600px;
+    line-height: 1.7;
+}
 
-        .skills span {
-            display: inline-block;
-            background: white;
-            color: #333;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 8px;
-            font-size: 14px;
-        }
+/* BUTTONS */
+.buttons {
+    margin-top: 25px;
+}
 
-        .projects {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+.btn {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
 
-        .card {
-            background: white;
-            color: #333;
-            width: 250px;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 15px;
-        }
+.primary {
+    background: #3b82f6;
+    color: white;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-    </style>
+.secondary {
+    background: #e0ecff;
+    color: #2563eb;
+}
+
+/* SECTION */
+.section {
+    padding: 60px;
+}
+
+.section h2 {
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    font-size: 14px;
+}
+</style>
 </head>
 
 <body>
@@ -106,7 +118,7 @@
 <header>
     <h2>Abhiram</h2>
     <nav>
-        <a href="#">Home</a>
+        <a href="#">About</a>
         <a href="#">Skills</a>
         <a href="#">Projects</a>
         <a href="#">Contact</a>
@@ -114,56 +126,67 @@
 </header>
 
 <section class="hero">
-    <h1>🚀 Hi, I'm Abhiram</h1>
-    <p>Cloud & DevOps Enthusiast</p>
-    <p>I build scalable apps using AWS, Flask & modern tools</p>
+    <h1>Hi, I'm <span>Abhiram</span></h1>
+    <h3>Cloud & DevOps Enthusiast</h3>
 
-    <button class="btn">View My Work</button>
-</section>
+    <p>
+        B.Tech student specializing in Cloud Computing and DevOps. 
+        I build scalable applications using AWS, Flask, and deployment tools 
+        like Gunicorn and Nginx. Passionate about automation and real-world solutions.
+    </p>
 
-<section class="section">
-    <h2>💡 Skills</h2>
-    <div class="skills">
-        <span>AWS</span>
-        <span>DevOps</span>
-        <span>Python</span>
-        <span>Flask</span>
-        <span>Docker</span>
-        <span>Git & GitHub</span>
-        <span>Nginx</span>
+    <div class="buttons">
+        <button class="btn primary">View Projects</button>
+        <button class="btn secondary">GitHub</button>
+        <button class="btn secondary">LinkedIn</button>
+        <button class="btn secondary">Resume</button>
     </div>
 </section>
 
 <section class="section">
-    <h2>📂 Projects</h2>
-    <div class="projects">
-
-        <div class="card">
-            <h3>AWS Cloud Deployment</h3>
-            <p>Flask app deployed using Gunicorn & Nginx on EC2.</p>
-        </div>
-
-        <div class="card">
-            <h3>Task Manager App</h3>
-            <p>Full-stack app with GitHub version control.</p>
-        </div>
-
-        <div class="card">
-            <h3>DevOps Automation</h3>
-            <p>CI/CD pipelines and automation scripts.</p>
-        </div>
-
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am a B.Tech student focused on DevOps and Cloud technologies. 
+            I enjoy building and deploying real-world applications using AWS, Docker, and backend frameworks.
+        </p>
     </div>
 </section>
 
 <section class="section">
-    <h2>📞 Contact</h2>
-    <p>Email: yourmail@example.com</p>
-    <p>GitHub: github.com/yourprofile</p>
+    <h2>Skills</h2>
+    <div class="card">
+        AWS • Python • Flask • Docker • Git • GitHub • Nginx • Linux • CI/CD
+    </div>
+</section>
+
+<section class="section">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>AWS Cloud Deployment</h3>
+        <p>Deployed Flask app using Gunicorn & Nginx on AWS EC2.</p>
+    </div>
+
+    <div class="card">
+        <h3>Task Manager App</h3>
+        <p>Full-stack project with GitHub version control.</p>
+    </div>
+
+</section>
+
+<section class="section">
+    <h2>Contact</h2>
+    <div class="card">
+        <p><strong>Email:</strong> abhiramkorupalli@gmail.com</p>
+        <p><strong>Phone:</strong> +91-7075051133</p>
+        <p><strong>GitHub:</strong> https://github.com/abhiramkorupalli28</p>
+        <p><strong>LinkedIn:</strong> https://linkedin.com/in/abhiramkorupalli</p>
+    </div>
 </section>
 
 <footer>
-    © 2026 Abhiram | Portfolio Website
+    © 2026 Abhiram | Portfolio
 </footer>
 
 </body>
