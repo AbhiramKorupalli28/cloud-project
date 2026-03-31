@@ -2,113 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Abhiram | Portfolio</title>
+<title>Abhiram | UI/UX Designer</title>
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #eef6ff;
-    color: #1e293b;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* NAVBAR */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f3ff, #eef2ff);
+    color: #1e1b4b;
+}
+
+/* NAV */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 60px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 25px 80px;
+    backdrop-filter: blur(10px);
 }
 
 header h2 {
-    color: #3b82f6;
+    color: #7c3aed;
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 30px;
     text-decoration: none;
-    color: #475569;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #3b82f6;
+    color: #4338ca;
+    font-weight: 500;
 }
 
 /* HERO */
 .hero {
-    padding: 80px 60px;
+    padding: 100px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 550px;
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 48px;
 }
 
 .hero span {
-    color: #3b82f6;
-}
-
-.hero h3 {
-    margin-top: 10px;
-    color: #2563eb;
+    color: #7c3aed;
 }
 
 .hero p {
-    margin-top: 15px;
-    max-width: 600px;
+    margin-top: 20px;
     line-height: 1.7;
 }
 
-/* BUTTONS */
-.buttons {
-    margin-top: 25px;
-}
-
 .btn {
-    padding: 10px 18px;
-    border-radius: 20px;
+    margin-top: 30px;
+    padding: 12px 22px;
+    border-radius: 30px;
     border: none;
-    margin-right: 10px;
     cursor: pointer;
-    font-size: 14px;
-}
-
-.primary {
-    background: #3b82f6;
+    background: #7c3aed;
     color: white;
+    transition: 0.3s;
 }
 
-.secondary {
-    background: #e0ecff;
-    color: #2563eb;
+.btn:hover {
+    transform: translateY(-3px);
 }
 
 /* SECTION */
 .section {
-    padding: 60px;
+    padding: 80px;
 }
 
 .section h2 {
-    color: #3b82f6;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 /* CARD */
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    padding: 8px 15px;
+    background: #ddd6fe;
+    border-radius: 20px;
+    font-size: 13px;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: white;
-    font-size: 14px;
+    padding: 30px;
+    margin-top: 40px;
 }
 </style>
 </head>
@@ -118,75 +134,73 @@ footer {
 <header>
     <h2>Abhiram</h2>
     <nav>
-        <a href="#">About</a>
+        <a href="#">Work</a>
         <a href="#">Skills</a>
-        <a href="#">Projects</a>
         <a href="#">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Hi, I'm <span>Abhiram</span></h1>
-    <h3>Cloud & DevOps Enthusiast</h3>
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Abhiram</span></h1>
+        <h3>UI/UX Designer</h3>
 
-    <p>
-        B.Tech student specializing in Cloud Computing and DevOps. 
-        I build scalable applications using AWS, Flask, and deployment tools 
-        like Gunicorn and Nginx. Passionate about automation and real-world solutions.
-    </p>
+        <p>
+            I design intuitive and visually engaging digital experiences. 
+            Specializing in user research, wireframing, and high-fidelity prototypes using Figma.
+        </p>
 
-    <div class="buttons">
-        <button class="btn primary">View Projects</button>
-        <button class="btn secondary">GitHub</button>
-        <button class="btn secondary">LinkedIn</button>
-        <button class="btn secondary">Resume</button>
+        <button class="btn">View Work</button>
     </div>
 </section>
 
 <section class="section">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I am a B.Tech student focused on DevOps and Cloud technologies. 
-            I enjoy building and deploying real-world applications using AWS, Docker, and backend frameworks.
-        </p>
+    <h2>Selected Work</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Daily Byte</h3>
+            <p>News app UI design focused on readability and engagement.</p>
+        </div>
+
+        <div class="card">
+            <h3>Learn Hub</h3>
+            <p>E-learning platform with clean UI and responsive design.</p>
+        </div>
+
+        <div class="card">
+            <h3>Navya’s App</h3>
+            <p>Fashion e-commerce app with modern shopping experience.</p>
+        </div>
+
     </div>
 </section>
 
 <section class="section">
     <h2>Skills</h2>
-    <div class="card">
-        AWS • Python • Flask • Docker • Git • GitHub • Nginx • Linux • CI/CD
+
+    <div class="skills">
+        <div class="skill">Figma</div>
+        <div class="skill">UI Design</div>
+        <div class="skill">UX Research</div>
+        <div class="skill">Wireframing</div>
+        <div class="skill">Prototyping</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
     </div>
-</section>
-
-<section class="section">
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>AWS Cloud Deployment</h3>
-        <p>Deployed Flask app using Gunicorn & Nginx on AWS EC2.</p>
-    </div>
-
-    <div class="card">
-        <h3>Task Manager App</h3>
-        <p>Full-stack project with GitHub version control.</p>
-    </div>
-
 </section>
 
 <section class="section">
     <h2>Contact</h2>
-    <div class="card">
-        <p><strong>Email:</strong> abhiramkorupalli@gmail.com</p>
-        <p><strong>Phone:</strong> +91-7075051133</p>
-        <p><strong>GitHub:</strong> https://github.com/abhiramkorupalli28</p>
-        <p><strong>LinkedIn:</strong> https://linkedin.com/in/abhiramkorupalli</p>
-    </div>
+
+    <p>Email: Saikorupalli@gmail.com</p>
+    <p>Phone: +91-7075051133</p>
+    <p>Location: Kakinada, India</p>
 </section>
 
 <footer>
-    © 2026 Abhiram | Portfolio
+    © 2026 Abhiram
 </footer>
 
 </body>
