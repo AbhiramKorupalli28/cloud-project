@@ -1,207 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Abhiram | UI/UX Designer</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f5f3ff, #eef2ff);
-    color: #1e1b4b;
-}
-
-/* NAV */
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 80px;
-    backdrop-filter: blur(10px);
-}
-
-header h2 {
-    color: #7c3aed;
-}
-
-nav a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: #4338ca;
-    font-weight: 500;
-}
-
-/* HERO */
-.hero {
-    padding: 100px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero-text {
-    max-width: 550px;
-}
-
-.hero h1 {
-    font-size: 48px;
-}
-
-.hero span {
-    color: #7c3aed;
-}
-
-.hero p {
-    margin-top: 20px;
-    line-height: 1.7;
-}
-
-.btn {
-    margin-top: 30px;
-    padding: 12px 22px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    background: #7c3aed;
-    color: white;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-/* SECTION */
-.section {
-    padding: 80px;
-}
-
-.section h2 {
-    margin-bottom: 40px;
-    font-size: 28px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(15px);
-    padding: 25px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-/* SKILLS */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill {
-    padding: 8px 15px;
-    background: #ddd6fe;
-    border-radius: 20px;
-    font-size: 13px;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navya's Learning - Personal Growth & Skill Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .course-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .navya-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+    </style>
 </head>
+<body class="bg-[#fafbff] text-slate-900">
 
-<body>
+    <!-- Navigation -->
+    <nav class="glass-nav sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 navya-gradient rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-indigo-200">N</div>
+                <span class="text-xl font-extrabold tracking-tight">Navya's<span class="text-indigo-600">Learning</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 font-semibold text-slate-600">
+                <a href="#courses" class="hover:text-indigo-600 transition-colors relative group">
+                    Courses
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="hover:text-indigo-600 transition-colors relative group">
+                    About Navya
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#pricing" class="hover:text-indigo-600 transition-colors relative group">
+                    Pricing
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+            </div>
 
-<header>
-    <h2>Abhiram</h2>
-    <nav>
-        <a href="#">Work</a>
-        <a href="#">Skills</a>
-        <a href="#">Contact</a>
+            <div class="flex items-center gap-4">
+                <button class="hidden sm:block text-slate-600 font-bold hover:text-indigo-600">Log in</button>
+                <button class="navya-gradient text-white px-6 py-3 rounded-2xl font-bold hover:opacity-90 transition transform hover:scale-105 active:scale-95 shadow-xl shadow-indigo-200/50">
+                    Get Started
+                </button>
+            </div>
+        </div>
     </nav>
-</header>
 
-<section class="hero">
-    <div class="hero-text">
-        <h1>Hi, I'm <span>Abhiram</span></h1>
-        <h3>UI/UX Designer</h3>
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-bold mb-8">
+                    <span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-ping"></span>
+                    Now Enrolling for 2026 Cohort
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8">
+                    Learn Skills that <span class="text-gradient">Empower</span> Your Future.
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Join Navya's community of 50,000+ creators and professionals mastering high-impact skills through structured, hands-on learning.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 items-start">
+                    <div class="relative w-full max-w-md">
+                        <input type="text" id="courseSearch" placeholder="What do you want to learn today?" class="w-full pl-6 pr-32 py-5 rounded-2xl border-2 border-slate-100 focus:border-indigo-500 focus:outline-none shadow-xl shadow-slate-200/50 transition-all">
+                        <button class="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-6 rounded-xl font-bold hover:bg-indigo-600 transition-all active:scale-95">
+                            Search
+                        </button>
+                    </div>
+                </div>
 
-        <p>
-            I design intuitive and visually engaging digital experiences. 
-            Specializing in user research, wireframing, and high-fidelity prototypes using Figma.
-        </p>
+                <div class="mt-12 flex items-center gap-6">
+                    <div class="flex -space-x-3">
+                        <img src="https://i.pravatar.cc/100?u=a" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="user">
+                        <img src="https://i.pravatar.cc/100?u=b" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="user">
+                        <img src="https://i.pravatar.cc/100?u=c" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="user">
+                        <div class="w-12 h-12 rounded-full border-4 border-white bg-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">+12k</div>
+                    </div>
+                    <div class="text-slate-500 text-sm font-medium">
+                        <div class="flex items-center gap-1 text-yellow-500 mb-1">
+                            ★★★★★ <span class="ml-1 text-slate-900 font-bold">4.9/5</span>
+                        </div>
+                        Join thousands of successful graduates
+                    </div>
+                </div>
+            </div>
 
-        <button class="btn">View Work</button>
-    </div>
-</section>
+            <div class="relative">
+                <!-- Abstract Blobs -->
+                <div class="absolute -top-20 -right-20 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-pulse"></div>
+                <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-pulse" style="animation-delay: 2s"></div>
+                
+                <div class="relative bg-white p-5 rounded-[40px] shadow-2xl border border-white/50 backdrop-blur-sm float-animation">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Learning environment" class="rounded-[32px] w-full object-cover h-[500px] shadow-inner">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -right-8 top-1/4 bg-white p-5 rounded-2xl shadow-2xl border border-slate-50 flex items-center gap-4 transform rotate-3">
+                        <div class="bg-green-100 p-3 rounded-xl text-green-600">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="font-black text-slate-900 leading-tight">Expert Verified</p>
+                            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Top Tier Education</p>
+                        </div>
+                    </div>
 
-<section class="section">
-    <h2>Selected Work</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Daily Byte</h3>
-            <p>News app UI design focused on readability and engagement.</p>
+                    <!-- Floating User Count -->
+                    <div class="absolute -left-10 bottom-20 bg-indigo-900 text-white p-5 rounded-2xl shadow-2xl flex items-center gap-4 transform -rotate-2">
+                        <div class="text-3xl font-black">50k+</div>
+                        <div class="text-[10px] font-bold uppercase tracking-tighter opacity-80 leading-none">Active Students<br>Learning Now</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <div class="card">
-            <h3>Learn Hub</h3>
-            <p>E-learning platform with clean UI and responsive design.</p>
+    <!-- Categories -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-3">Skill Categories</h2>
+                    <p class="text-slate-500 text-lg">Pick a path and start your journey with Navya.</p>
+                </div>
+                <button class="text-indigo-600 font-bold hover:bg-indigo-50 px-6 py-2 rounded-xl transition-all">View All Paths &rarr;</button>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6" id="categoryContainer">
+                <div class="category-btn bg-slate-50 p-8 rounded-3xl border border-transparent hover:border-indigo-200 hover:bg-white transition-all cursor-pointer text-center group active-cat" onclick="selectCategory(this)">
+                    <div class="w-14 h-14 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900">Coding</h3>
+                </div>
+                <div class="category-btn bg-slate-50 p-8 rounded-3xl border border-transparent hover:border-indigo-200 hover:bg-white transition-all cursor-pointer text-center group" onclick="selectCategory(this)">
+                    <div class="w-14 h-14 mx-auto bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900">UI/UX</h3>
+                </div>
+                <div class="category-btn bg-slate-50 p-8 rounded-3xl border border-transparent hover:border-indigo-200 hover:bg-white transition-all cursor-pointer text-center group" onclick="selectCategory(this)">
+                    <div class="w-14 h-14 mx-auto bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900">Business</h3>
+                </div>
+                <div class="category-btn bg-slate-50 p-8 rounded-3xl border border-transparent hover:border-indigo-200 hover:bg-white transition-all cursor-pointer text-center group" onclick="selectCategory(this)">
+                    <div class="w-14 h-14 mx-auto bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900">Marketing</h3>
+                </div>
+                <div class="category-btn bg-slate-50 p-8 rounded-3xl border border-transparent hover:border-indigo-200 hover:bg-white transition-all cursor-pointer text-center group" onclick="selectCategory(this)">
+                    <div class="w-14 h-14 mx-auto bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900">Media</h3>
+                </div>
+                <div class="category-btn bg-slate-50 p-8 rounded-3xl border border-transparent hover:border-indigo-200 hover:bg-white transition-all cursor-pointer text-center group" onclick="selectCategory(this)">
+                    <div class="w-14 h-14 mx-auto bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900">AI Tech</h3>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>Navya’s App</h3>
-            <p>Fashion e-commerce app with modern shopping experience.</p>
+    <!-- Featured Courses -->
+    <section id="courses" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-black mb-6">Popular Programs</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">Carefully designed curriculums created by Navya to take you from a total beginner to an industry-ready professional.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-[32px] overflow-hidden border border-slate-100 course-card p-4">
+                    <div class="relative mb-6">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover rounded-2xl shadow-md" alt="course">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black text-indigo-700 shadow-sm uppercase tracking-widest">Bestseller</div>
+                    </div>
+                    <div class="px-3 pb-4">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 bg-blue-50 px-3 py-1 rounded-lg">Full-Stack Dev</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-3 leading-tight group-hover:text-indigo-600">The Ultimate React Framework Guide</h3>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="text-amber-500 font-black">4.9</span>
+                            <div class="flex text-amber-400">★★★★★</div>
+                            <span class="text-slate-400 text-sm">(4,120)</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 navya-gradient rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-bold">N</div>
+                                <span class="text-sm font-bold text-slate-700 underline decoration-indigo-200 decoration-2">Navya K.</span>
+                            </div>
+                            <span class="text-2xl font-black text-slate-900">$89.00</span>
+                        </div>
+                        <button class="w-full mt-6 bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-indigo-600 transition-all transform active:scale-95 shadow-lg shadow-slate-200">Enroll Today</button>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-[32px] overflow-hidden border border-slate-100 course-card p-4">
+                    <div class="relative mb-6">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover rounded-2xl shadow-md" alt="course">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black text-purple-700 shadow-sm uppercase tracking-widest">Hot 🔥</div>
+                    </div>
+                    <div class="px-3 pb-4">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600 bg-purple-50 px-3 py-1 rounded-lg">Design System</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-3 leading-tight">Mastering Figma & Modern UI Design</h3>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="text-amber-500 font-black">4.8</span>
+                            <div class="flex text-amber-400">★★★★★</div>
+                            <span class="text-slate-400 text-sm">(2,840)</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 navya-gradient rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-bold">N</div>
+                                <span class="text-sm font-bold text-slate-700 underline decoration-indigo-200 decoration-2">Navya K.</span>
+                            </div>
+                            <span class="text-2xl font-black text-slate-900">$55.00</span>
+                        </div>
+                        <button class="w-full mt-6 bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-indigo-600 transition-all transform active:scale-95 shadow-lg shadow-slate-200">Enroll Today</button>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-[32px] overflow-hidden border border-slate-100 course-card p-4">
+                    <div class="relative mb-6">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover rounded-2xl shadow-md" alt="course">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black text-cyan-700 shadow-sm uppercase tracking-widest">New</div>
+                    </div>
+                    <div class="px-3 pb-4">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-600 bg-cyan-50 px-3 py-1 rounded-lg">Artificial Intelligence</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-3 leading-tight">AI Prompt Engineering for Experts</h3>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="text-amber-500 font-black">5.0</span>
+                            <div class="flex text-amber-400">★★★★★</div>
+                            <span class="text-slate-400 text-sm">(980)</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 navya-gradient rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-bold">N</div>
+                                <span class="text-sm font-bold text-slate-700 underline decoration-indigo-200 decoration-2">Navya K.</span>
+                            </div>
+                            <span class="text-2xl font-black text-slate-900">$120.00</span>
+                        </div>
+                        <button class="w-full mt-6 bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-indigo-600 transition-all transform active:scale-95 shadow-lg shadow-slate-200">Enroll Today</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- Why Navya's Learning? (Personalized Section) -->
+    <section id="about" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-indigo-900 rounded-[50px] p-12 lg:p-20 text-white relative overflow-hidden">
+                <!-- Abstract Design Elements -->
+                <div class="absolute top-0 right-0 w-1/2 h-full bg-white opacity-[0.03] transform skew-x-12 translate-x-20"></div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div>
+                        <h2 class="text-4xl lg:text-5xl font-black mb-8 leading-tight">Why Choose <span class="text-indigo-400 underline decoration-white/20">Navya's Learning</span>?</h2>
+                        <div class="space-y-8">
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-400/30">
+                                    <svg class="w-6 h-6 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Curriculum by Navya</h4>
+                                    <p class="text-indigo-100 opacity-70">No generic content. Every course is hand-crafted with real-world examples from Navya's 10+ years of experience.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-400/30">
+                                    <svg class="w-6 h-6 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Direct Mentorship</h4>
+                                    <p class="text-indigo-100 opacity-70">Get answers directly from the instructor. We host weekly live Q&A sessions to unblock your learning journey.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-400/30">
+                                    <svg class="w-6 h-6 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Portfolio-Ready Projects</h4>
+                                    <p class="text-indigo-100 opacity-70">Don't just watch. Build. Every course concludes with a capstone project that looks great on a resume.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="bg-indigo-800 p-8 rounded-3xl border border-indigo-700 shadow-2xl">
+                            <p class="text-2xl font-medium italic mb-8 leading-relaxed opacity-90">"My goal is to make high-level technical education accessible and enjoyable. We don't just teach tools; we teach the mindset needed to excel in 2026's economy."</p>
+                            <div class="flex items-center gap-5">
+                                <div class="w-16 h-16 navya-gradient rounded-full border-4 border-indigo-600 flex items-center justify-center text-white text-3xl font-black">N</div>
+                                <div>
+                                    <p class="text-xl font-black">Navya Kapoor</p>
+                                    <p class="text-indigo-300 font-bold uppercase tracking-widest text-xs">Founder & Lead Educator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-    <h2>Skills</h2>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-16 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 navya-gradient rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-xl">N</div>
+                        <span class="text-white text-2xl font-black tracking-tight">Navya's<span class="text-indigo-500">Learning</span></span>
+                    </div>
+                    <p class="max-w-md text-lg leading-relaxed mb-8 opacity-80">Empowering the next generation of digital professionals with practical, project-based education. Join us and turn your curiosity into a career.</p>
+                    <div class="flex gap-5">
+                        <a href="#" class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center hover:text-white transition-all hover:bg-indigo-600"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center hover:text-white transition-all hover:bg-indigo-600"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Free Workshops</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Affiliate Program</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">About Navya</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Career Opportunities</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+                <p>&copy; 2026 Navya's e-learning Inc. Built with love for the curious mind.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <div class="skills">
-        <div class="skill">Figma</div>
-        <div class="skill">UI Design</div>
-        <div class="skill">UX Research</div>
-        <div class="skill">Wireframing</div>
-        <div class="skill">Prototyping</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-    </div>
-</section>
+    <script>
+        // Category Selection Logic
+        function selectCategory(element) {
+            // Remove active class from all
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'border-indigo-200', 'shadow-xl', 'shadow-indigo-100');
+                btn.classList.add('bg-slate-50', 'border-transparent');
+            });
+            
+            // Add active class to clicked
+            element.classList.remove('bg-slate-50', 'border-transparent');
+            element.classList.add('bg-white', 'border-indigo-200', 'shadow-xl', 'shadow-indigo-100');
+            
+            // Interaction Feedback
+            console.log("Category selected: " + element.querySelector('h3').innerText);
+        }
 
-<section class="section">
-    <h2>Contact</h2>
+        // Search Input Interaction
+        const searchInput = document.getElementById('courseSearch');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
 
-    <p>Email: Saikorupalli@gmail.com</p>
-    <p>Phone: +91-7075051133</p>
-    <p>Location: Kakinada, India</p>
-</section>
-
-<footer>
-    © 2026 Abhiram
-</footer>
-
+        // Initialize first category as active visually
+        window.onload = () => {
+            const firstCat = document.querySelector('.category-btn');
+            if(firstCat) selectCategory(firstCat);
+        };
+    </script>
 </body>
 </html>
